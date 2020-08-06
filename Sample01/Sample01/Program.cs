@@ -203,7 +203,7 @@ namespace Sample01
         }
 
         /// <summary>
-        /// 综合查询
+        /// 综合查询   
         /// </summary>
         static void select_content_commemt()
         {
