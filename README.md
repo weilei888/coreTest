@@ -1,3 +1,23 @@
-# coreTest
-asp.net core cms
-111
+# Core学习项目：内容管理系统
+## 1、Sample01：Dapper快速入门，控制台应用程序，内容及评论的增删改查
+Dapper.NET下的一个轻量级ORM框架，属于半自动的，其实体类需要自己写。
+
+## 2、PDM文件夹是数据库设计软件PowerDesigner
+coreTest.cmd是概念模型：产品方能看懂
+coreTest.lmd是逻辑模型：程序员能看懂
+coreTest.pmd是物理模型：计算机能看懂
+方式一：先建立cdm的实体和关系，然后生成pdm，修改外键code，然后生成lpd，最后生成sql.sql
+方式二：先建立ldm，再生成pdm，最后生成sql.sql
+
+## coreTest项目源码
+开发框架
+1、UI：用户UI层，用户界面，包含前台网站和后台
+2、Application：提供对用户界面的接口访问，起到用户界面跟数据库操作解耦的作用
+3、Repository：仓储层，跟数据库的交互
+4、Entity：实体对象层，感觉有点多余，因为实际页面中需要的数据跟数据库中的数据并不完全一致，而页面中包含了更多的信息，
+		那我们怎么往视图传数据呢，这就有了ViewModel的概念，定义一个ViewModel包含了实际页面需要的所有数据。
+5、Infrastructure：基础设施层，代码的核心层，实现了通用的方法：比如帮助类、对字符串的一些扩展、序列化与反序列化、HTTP请求、过滤器、日志功能、中间件的扩展等
+6、Test：测试层，包含了单元测试及集成测试
+
+
+

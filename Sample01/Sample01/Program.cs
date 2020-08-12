@@ -11,7 +11,7 @@ namespace Sample01
         /// <summary>
         /// 数据库连接字符串
         /// </summary>
-        private static readonly string connStr = "Data Source=127.0.0.1;User ID=sa;Password=123456;Initial Catalog=CRM;Max Pool Size=100;";
+        private static readonly string connStr = "Data Source=127.0.0.1;User ID=sa;Password=123456;Initial Catalog=CMS;Max Pool Size=100;";
         //Pooling=false;就是关闭连接池的意思，默认为true，启用连接池：建立新连接时系统会先看里面有没有一样的连接，有就不用了新建了。
         //Inegrated Security=SSPI表示以当前系统用户去登录数据库服务器
         //Initial Catalog与Database一样，都表示要连接的数据库名

@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <title>Hello world</title>
+        <style>
+            .active{
+                font-size:20px;
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <p>{{message}}</p>
+            <input  v-model="message"/>
+        </div>
+        <script>
+            new Vue({
+                el: "#app",
+                data: {
+                    message:"Hello wordl!"
+                }
+            })
+        </script>
+        <div id="app2">
+            <p>{{score}}</p>
+            <input v-model="score" />
+            <div v-if="score>=90">优秀</div>
+            <div v-else-if="score>=80&&score<90">优</div>
+            <div v-else-if="score>=70&&score<80">良</div>
+            <div v-else-if="score>=60&&score<70">及格</div>
+            <div v-else>不及格</div>
+        </div>
+        <script>
+            new Vue({
+                el: "#app2",
+                data: {
+                    score:100
+                }
+            })
+        </script>
+        <div id="app3">
+            <p v-show="score<60">成绩为{{score}}不及格</p>
+            <p v-show="score>=60">成绩为{{score}}及格</p>
+            <input v-model="score"/>
+        </div>
+        <script>
+            new Vue({
+                el: "#app3",
+                data: {
+                    score:50
+                }
+            })
+        </script>
+
+        <div id="app4">
+            <h2>解决问题途径</h2>
+            <ol>
+                <li v-for="method in methods">
+                    {{method.name}}
+                </li>
+            </ol>
+        </div>
+        <script>
+            new Vue({
+                el: "#app4",
+                data: {
+                    methods: [
+                        { name:"百度" },
+                        { name: "必应" },
+                        { name: "搜狗" },
+                        {name:"谷歌"}
+                    ]
+                }
+            })
+        </script>
+        <div id="app5">
+            <p v-bind:class="{active:isActive}">{{message}}</p>
+            <!-- v-bind指令可以用:代替 -->
+            <input v-model="message"/>
+        </div>
+        <script>
+            new Vue({
+                el: "#app5",
+                data: {
+                    message: "Hello world!",
+                    isActive: true
+                }
+            })
+        </script>
+        <div id="app6">
+            <p class="active">您点击了{{counter}}次！</p>
+            <button v-on:click="addCounter">点击我！</button>
+            <!-- v-on指令可以用@符号代替 -->
+        </div>
+        <script>
+            new Vue({
+                el: "#app6",
+                data: {
+                    counter:0
+                },
+                methods: {
+                    addCounter: function () {
+                        this.counter++;
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
